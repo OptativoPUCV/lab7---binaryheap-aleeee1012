@@ -27,10 +27,11 @@ void* heap_top(Heap* pq)
   return pq->heapArray->data;
 }
 
-void heap_push(Heap* pq, void* data, int priority){
-
+void heap_push(Heap* pq, void* data, int priority)
+{
+  pq->heapArray[pq->size] = data;
+  pq->size++;
 }
-
 
 void heap_pop(Heap* pq){
 
