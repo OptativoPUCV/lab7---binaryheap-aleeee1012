@@ -49,3 +49,13 @@ Wed 10 May 2023 11:26:09 PM UTC:
  tests:  1|3
 total_score: 10/70
 2b531ad
+Wed 10 May 2023 11:28:42 PM UTC: 
+ heap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:26:25: error: incompatible types when returning type ‘heapElem’ {aka ‘struct nodo’} but ‘void *’ was expected
+   26 |     return pq->heapArray[0];
+      |            ~~~~~~~~~~~~~^~~
+Compilation failed
+7ad9ae5
