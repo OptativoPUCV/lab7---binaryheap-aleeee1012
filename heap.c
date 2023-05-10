@@ -37,7 +37,7 @@ Heap* createHeap()
 {
   Heap *arreglo = (Heap*)malloc(Heap);
 
-  arreglo->heapArray = (int*)malloc(3 * sizeof(int));
+  arreglo->heapArray = (int)malloc(3 * sizeof(int));
   arreglo->size = 0;
   arreglo->capac = 3;
   return arreglo;
