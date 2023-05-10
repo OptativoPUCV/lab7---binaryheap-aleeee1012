@@ -18,10 +18,9 @@ typedef struct Heap
   int capac;
 } Heap;
 
-
 void* heap_top(Heap* pq)
 {
-  if(pq == NULL) return NULL;
+  return pq->heapArray->data[0];
 }
 
 void heap_push(Heap* pq, void* data, int priority){
