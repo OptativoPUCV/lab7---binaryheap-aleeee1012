@@ -65,3 +65,14 @@ Wed 10 May 2023 11:29:02 PM UTC:
  tests:  1|3
 total_score: 10/70
 99a4b85
+Wed 10 May 2023 11:46:31 PM UTC: 
+ heap.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:25:1: error: control reaches end of non-void function [-Werror=return-type]
+   25 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+e2b0eac

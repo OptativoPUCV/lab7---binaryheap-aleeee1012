@@ -21,11 +21,7 @@ typedef struct Heap
 
 void* heap_top(Heap* pq)
 {
-  if(pq->size != 0)
-  {
-    return &(pq->heapArray[0]);
-  }
-  return NULL;
+  if(pq == NULL) return NULL;
 }
 
 void heap_push(Heap* pq, void* data, int priority){
