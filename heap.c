@@ -29,7 +29,7 @@ void* heap_top(Heap* pq)
 
 void heap_push(Heap* pq, void* data, int priority)
 {
-  pq->heapArray[int(pq->size)] = priority;
+  pq->heapArray[pq->size] = data;
   pq->size++;
 }
 
