@@ -265,3 +265,28 @@ heap.c:40:24: error: ‘newNode’ undeclared (first use in this function)
       |                        ^~~~~~~
 Compilation failed
 820c1d9
+Thu 11 May 2023 02:21:29 AM UTC: 
+ heap.c | 6 ------
+ 1 file changed, 6 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:32:3: error: unknown type name ‘HeapNode’
+   32 |   HeapNode newNode = {data, priority};
+      |   ^~~~~~~~
+heap.c:32:23: error: initialization of ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   32 |   HeapNode newNode = {data, priority};
+      |                       ^~~~
+heap.c:32:23: note: (near initialization for ‘newNode’)
+heap.c:32:29: error: excess elements in scalar initializer [-Werror]
+   32 |   HeapNode newNode = {data, priority};
+      |                             ^~~~~~~~
+heap.c:32:29: note: (near initialization for ‘newNode’)
+heap.c:34:22: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘int’
+   34 |   pq->heapArray[i] = newNode;
+      |                      ^~~~~~~
+heap.c:42:22: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘int’
+   42 |   pq->heapArray[i] = newNode;
+      |                      ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+742aafd
