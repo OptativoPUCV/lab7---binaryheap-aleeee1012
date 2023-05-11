@@ -649,3 +649,27 @@ heap.c:84:7: error: implicit declaration of function ‘swap’ [-Werror=implici
 cc1: all warnings being treated as errors
 Compilation failed
 dfd95d8
+Thu 11 May 2023 04:52:46 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:84:12: error: passing argument 1 of ‘swap’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   84 |       swap(&pq->heapArray[child], &pq->heapArray[parent]); // intercambiar el padre con el hijo de mayor prioridad
+      |            ^~~~~~~~~~~~~~~~~~~~~
+      |            |
+      |            heapElem * {aka struct nodo *}
+heap.c:56:17: note: expected ‘Heap *’ {aka ‘struct Heap *’} but argument is of type ‘heapElem *’ {aka ‘struct nodo *’}
+   56 | void swap(Heap* a, Heap* b) {
+      |           ~~~~~~^
+heap.c:84:35: error: passing argument 2 of ‘swap’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   84 |       swap(&pq->heapArray[child], &pq->heapArray[parent]); // intercambiar el padre con el hijo de mayor prioridad
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   heapElem * {aka struct nodo *}
+heap.c:56:26: note: expected ‘Heap *’ {aka ‘struct Heap *’} but argument is of type ‘heapElem *’ {aka ‘struct nodo *’}
+   56 | void swap(Heap* a, Heap* b) {
+      |                    ~~~~~~^
+cc1: all warnings being treated as errors
+Compilation failed
+5212e86

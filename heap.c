@@ -53,8 +53,8 @@ void heap_push(Heap* pq, void* data, int p)
 {
 
 }*/
-void swap(HeapNode* a, HeapNode* b) {
-  HeapNode temp = *a;
+void swap(Heap* a, Heap* b) {
+  Heap temp = *a;
   *a = *b;
   *b = temp;
 }
