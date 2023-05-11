@@ -58,7 +58,7 @@ void heap_pop(Heap* pq)
   int k = 0;
   while(1)
   {
-   int hijoD = (2 * k) + 2;
+   //int hijoD = (2 * k) + 2;
    int hijoI = (2 * k) + 2;
    int tmp = k;
     
