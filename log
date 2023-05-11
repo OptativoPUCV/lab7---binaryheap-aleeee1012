@@ -523,3 +523,22 @@ Thu 11 May 2023 04:23:37 AM UTC:
  tests:  2|2
 total_score: 20/70
 437d823
+Thu 11 May 2023 04:24:51 AM UTC: 
+ heap.c | 25 ++++++++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:57:63: error: ‘HeapElement’ undeclared (first use in this function); did you mean ‘heapElem’?
+   57 |     pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(HeapElement));
+      |                                                               ^~~~~~~~~~~
+      |                                                               heapElem
+heap.c:57:63: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:67:16: error: expected ‘;’ before ‘tmp’
+   67 |     HeapElement tmp = pq->heapArray[i];
+      |                ^~~~
+      |                ;
+heap.c:69:30: error: ‘tmp’ undeclared (first use in this function)
+   69 |     pq->heapArray[(i-1)/2] = tmp;
+      |                              ^~~
+Compilation failed
+256e6a1
