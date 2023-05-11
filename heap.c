@@ -49,7 +49,7 @@ void heap_push(Heap* pq, void* data, int p)
   }
 }
 
-/*void heap_pop(Heap* pq)
+void heap_pop(Heap* pq)
 {
   int i = pq->size;
   pq->heapArray[0] = pq->heapArray[i-1];
@@ -79,17 +79,17 @@ void heap_push(Heap* pq, void* data, int p)
       heapElem tmp2 = pq->heapArray[k];
       pq->heapArray[k] = pq->heapArray[tmp];
 pq->heapArray[tmp] = tmp2;
+     // k = tmp;
       break;
     }
     break;
   }  
-}*/
+}
 
-void heap_pop(Heap* pq)
+/*void heap_pop(Heap* pq)
 {
-  int i = pq->size;
-  i--;
- pq->heapArray[0] = pq->heapArray[i];
+  pq->size--;
+  pq->heapArray[0] = pq->heapArray[pq->size];
 
   int k = 0;
   while (1)
@@ -98,12 +98,12 @@ void heap_pop(Heap* pq)
     int hijoI = (2 * k) + 1;
     int tmp = k;
 
-    if (hijoI < i && pq->heapArray[hijoI].priority > pq->heapArray[tmp].priority)
+    if (hijoI < pq->size && pq->heapArray[hijoI].priority > pq->heapArray[tmp].priority)
     {
       tmp = hijoI;
     }
 
-    if (hijoD < i && pq->heapArray[hijoD].priority > pq->heapArray[tmp].priority)
+    if (hijoD < pq->size && pq->heapArray[hijoD].priority > pq->heapArray[tmp].priority)
     {
       tmp = hijoD;
     }
@@ -120,8 +120,7 @@ void heap_pop(Heap* pq)
       break;
     }
   }
-}
-
+}*/
 
 Heap* createHeap()
 {
