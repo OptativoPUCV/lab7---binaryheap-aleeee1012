@@ -370,3 +370,59 @@ Thu 11 May 2023 02:25:46 AM UTC:
  tests:  2|2
 total_score: 20/70
 50c6850
+Thu 11 May 2023 03:35:39 AM UTC: 
+ heap.c | 22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:31:25: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   31 |     if (pq->size == pq->capacity) {
+      |                         ^~~~~~~~
+      |                         capac
+heap.c:32:13: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   32 |         pq->capacity = pq->capacity * 2 + 1;
+      |             ^~~~~~~~
+      |             capac
+heap.c:32:28: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   32 |         pq->capacity = pq->capacity * 2 + 1;
+      |                            ^~~~~~~~
+      |                            capac
+heap.c:33:52: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   33 |         pq->heapArray = realloc(pq->heapArray, pq->capacity * sizeof(int));
+      |                                                    ^~~~~~~~
+      |                                                    capac
+heap.c:34:11: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   34 |         pq->data = realloc(pq->data, pq->capacity * sizeof(void*));
+      |           ^~
+heap.c:34:30: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   34 |         pq->data = realloc(pq->data, pq->capacity * sizeof(void*));
+      |                              ^~
+heap.c:34:42: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   34 |         pq->data = realloc(pq->data, pq->capacity * sizeof(void*));
+      |                                          ^~~~~~~~
+      |                                          capac
+heap.c:38:24: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘int’
+   38 |     pq->heapArray[i] = p;
+      |                        ^
+heap.c:39:7: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   39 |     pq->data[i] = data;
+      |       ^~
+heap.c:42:48: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘int’)
+   42 |     while (i > 0 && pq->heapArray[(i - 1) / 2] < p) {
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+      |                                  |
+      |                                  heapElem {aka struct nodo}
+heap.c:44:11: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   44 |         pq->data[i] = pq->data[(i - 1) / 2];
+      |           ^~
+heap.c:44:25: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   44 |         pq->data[i] = pq->data[(i - 1) / 2];
+      |                         ^~
+heap.c:48:24: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘int’
+   48 |     pq->heapArray[i] = p;
+      |                        ^
+heap.c:49:7: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   49 |     pq->data[i] = data;
+      |       ^~
+Compilation failed
+f71f216

@@ -27,10 +27,28 @@ void* heap_top(Heap* pq)
   return pq->heapArray->data;
 }
 
-void heap_push(Heap* pq, void* data, int priority)
-{
-  
+void heap_push(Heap* pq, void* data, int p) {
+    if (pq->size == pq->capacity) {
+        pq->capacity = pq->capacity * 2 + 1;
+        pq->heapArray = realloc(pq->heapArray, pq->capacity * sizeof(int));
+        pq->data = realloc(pq->data, pq->capacity * sizeof(void*));
+    }
+
+    int i = pq->size;
+    pq->heapArray[i] = p;
+    pq->data[i] = data;
+    pq->size++;
+
+    while (i > 0 && pq->heapArray[(i - 1) / 2] < p) {
+        pq->heapArray[i] = pq->heapArray[(i - 1) / 2];
+        pq->data[i] = pq->data[(i - 1) / 2];
+        i = (i - 1) / 2;
+    }
+
+    pq->heapArray[i] = p;
+    pq->data[i] = data;
 }
+
 
 void heap_pop(Heap* pq){
 
