@@ -85,7 +85,7 @@ void heap_pop(Heap* pq) {
       child = right; // el hijo derecho tiene mayor prioridad
     }
     if (pq->heapArray[child].priority > pq->heapArray[parent].priority) {
-      swap(&pq->heapArray[child], &pq->heapArray[parent]); // intercambiar el padre con el hijo de mayor prioridad
+      //swap(&pq->heapArray[child], &pq->heapArray[parent]); // intercambiar el padre con el hijo de mayor prioridad*/
       parent = child; // continuar el reordenamiento hacia abajo a partir del hijo
     } else {
       break; // el padre está en su posición correcta
