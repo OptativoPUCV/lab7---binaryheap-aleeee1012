@@ -192,3 +192,13 @@ heap.c:35:30: error: invalid type argument of ‘->’ (have ‘int’)
       |                              ^~
 Compilation failed
 bb0f563
+Thu 11 May 2023 12:02:46 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:35:24: error: expected identifier before ‘(’ token
+   35 |   while(pq->heapArray->(size-1)->priority > priority)
+      |                        ^
+Compilation failed
+c1f239b
