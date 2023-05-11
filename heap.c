@@ -57,10 +57,9 @@ void heap_pop(Heap* pq)
 
   while(i > 0 && pq->heapArray[0].priority > pq->heapArray[i].priority)
   {
-    heapElem tmp = pq->heapArray[0]; //Variable temporal, para guardar dato que se desea cambiar
+    heapElem tmp = pq->heapArray[0];
     pq->heapArray[0] = pq->heapArray[i];
     pq->heapArray[i] = tmp;
-    i = (i - 1)/2;
   }
 }
 
