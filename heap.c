@@ -77,47 +77,11 @@ void heap_pop(Heap* pq)
       heapElem tmp2 = pq->heapArray[k];
       pq->heapArray[k] = pq->heapArray[tmp];
 pq->heapArray[tmp] = tmp2;
-      k = tmp;
     }
+    i = (i - 1)/2;
     break;
   }  
 }
-
-/*void heap_pop(Heap* pq)
-{
-  pq->size--;
-  pq->heapArray[0] = pq->heapArray[pq->size];
-
-  int k = 0;
-  while (1)
-  {
-    int hijoD = (2 * k) + 2;
-    int hijoI = (2 * k) + 1;
-    int tmp = k;
-
-    if (hijoI < pq->size && pq->heapArray[hijoI].priority > pq->heapArray[tmp].priority)
-    {
-      tmp = hijoI;
-    }
-
-    if (hijoD < pq->size && pq->heapArray[hijoD].priority > pq->heapArray[tmp].priority)
-    {
-      tmp = hijoD;
-    }
-
-    if (tmp != k)
-    {
-      heapElem tmp2 = pq->heapArray[k];
-      pq->heapArray[k] = pq->heapArray[tmp];
-      pq->heapArray[tmp] = tmp2;
-      k = tmp;
-    }
-    else
-    {
-      break;
-    }
-  }
-}*/
 
 Heap* createHeap()
 {
