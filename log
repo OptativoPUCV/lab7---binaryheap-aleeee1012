@@ -290,3 +290,24 @@ heap.c:42:22: error: incompatible types when assigning to type ‘heapElem’ {a
 cc1: all warnings being treated as errors
 Compilation failed
 742aafd
+Thu 11 May 2023 02:22:35 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:32:3: error: unknown type name ‘HeapNode’
+   32 |   HeapNode *newNode = {data, priority};
+      |   ^~~~~~~~
+heap.c:32:30: error: excess elements in scalar initializer [-Werror]
+   32 |   HeapNode *newNode = {data, priority};
+      |                              ^~~~~~~~
+heap.c:32:30: note: (near initialization for ‘newNode’)
+heap.c:34:22: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘int *’
+   34 |   pq->heapArray[i] = newNode;
+      |                      ^~~~~~~
+heap.c:42:22: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘int *’
+   42 |   pq->heapArray[i] = newNode;
+      |                      ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3c72d08

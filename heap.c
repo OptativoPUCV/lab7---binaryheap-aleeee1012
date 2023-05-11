@@ -29,7 +29,7 @@ void* heap_top(Heap* pq)
 
 void heap_push(Heap* pq, void* data, int priority)
 {
-  HeapNode newNode = {data, priority};
+  HeapNode *newNode = {data, priority};
   int i = pq->size;
   pq->heapArray[i] = newNode;
   pq->size++;
