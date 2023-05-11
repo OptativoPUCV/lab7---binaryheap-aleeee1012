@@ -49,21 +49,21 @@ void heap_push(Heap* pq, void* data, int p)
   }
 }
 
-/*void heap_pop(Heap* pq)
+void heap_pop(Heap* pq)
 {
   int i = pq->size;
-  pq->heapArray[0] = pq->heapArray[i];
+  pq->heapArray[0] = pq->heapArray[i-1];
   i--;
 
-  while(i > 0 && pq->heapArray[0].priority > pq->heapArray[i].priority)
+  while(i > 0 && pq->heapArray[0].priority > pq->heapArray[i-1].priority)
   {
     heapElem tmp = pq->heapArray[0];
-    pq->heapArray[0] = pq->heapArray[i];
+    pq->heapArray[0] = pq->heapArray[i-1];
     pq->heapArray[i] = tmp;
   }
-}*/
+}
 
-void heap_pop(Heap* pq) {
+/*void heap_pop(Heap* pq) {
   if (pq->size == 0) {
     return; // no hay elementos en el montículo
   }
@@ -85,13 +85,13 @@ void heap_pop(Heap* pq) {
       child = right; // el hijo derecho tiene mayor prioridad
     }
     if (pq->heapArray[child].priority > pq->heapArray[parent].priority) {
-      //swap(&pq->heapArray[child], &pq->heapArray[parent]); // intercambiar el padre con el hijo de mayor prioridad*/
+      //swap(&pq->heapArray[child], &pq->heapArray[parent]); // intercambiar el padre con el hijo de mayor prioridad
       parent = child; // continuar el reordenamiento hacia abajo a partir del hijo
     } else {
       break; // el padre está en su posición correcta
     }
   }
-}
+}*/
 
 
 Heap* createHeap()
