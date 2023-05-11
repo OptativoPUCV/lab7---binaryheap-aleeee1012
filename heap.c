@@ -42,7 +42,7 @@ void heap_push(Heap* pq, void* data, int p)
   while(pq->size > 0 && pq->heapArray->priority < p)
   {
     pq->heapArray = pq->heapArray - 1;
-    pq->data = pq->data - 1;
+    pq->heapArray->data = pq->heapArray->data - 1;
     break;
   }
   pq->heapArray->priority = p;

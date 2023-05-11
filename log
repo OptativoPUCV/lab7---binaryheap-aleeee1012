@@ -517,3 +517,9 @@ heap.c:45:18: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘d
       |                  ^~
 Compilation failed
 04c0324
+Thu 11 May 2023 04:23:37 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|2
+total_score: 20/70
+437d823
