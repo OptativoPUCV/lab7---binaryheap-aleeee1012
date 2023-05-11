@@ -49,46 +49,10 @@ void heap_push(Heap* pq, void* data, int p)
   }
 }
 
-/*void heap_pop(Heap* pq)
+void heap_pop(Heap* pq)
 {
 
-}*/
-void swap(Heap* a, Heap* b) {
-  Heap temp = *a;
-  *a = *b;
-  *b = temp;
 }
-
-void heap_pop(Heap* pq) {
-  if (pq->size == 0) {
-    return; // no hay elementos en el montículo
-  }
-
-  // intercambiar la raíz con el último elemento del arreglo
-  pq->heapArray[0] = pq->heapArray[pq->size - 1];
-  pq->size--;
-
-  // reordenamiento hacia abajo para restaurar la propiedad de montículo
-  int parent = 0;
-  while (1) {
-    int left = 2 * parent + 1;
-    int right = 2 * parent + 2;
-    if (left >= pq->size) {
-      break; // el nodo no tiene hijos
-    }
-    int child = left;
-    if (right < pq->size && pq->heapArray[right].priority > pq->heapArray[left].priority) {
-      child = right; // el hijo derecho tiene mayor prioridad
-    }
-    if (pq->heapArray[child].priority > pq->heapArray[parent].priority) {
-      swap(&pq->heapArray[child], &pq->heapArray[parent]); // intercambiar el padre con el hijo de mayor prioridad
-      parent = child; // continuar el reordenamiento hacia abajo a partir del hijo
-    } else {
-      break; // el padre está en su posición correcta
-    }
-  }
-}
-
 
 Heap* createHeap()
 {
