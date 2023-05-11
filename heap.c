@@ -29,13 +29,23 @@ void* heap_top(Heap* pq)
 
 void heap_push(Heap* pq, void* data, int priority)
 {
-  pq->heapArray->data = data;
-  pq->size++;
-
-  while(pq->heapArray->priority[pq->size-1] > priority)
+  if (pq->size >= pq->capacity) 
   {
-    printf("HOLA");
+    pq->capacity *= 2;
+    pq->heapArray = (HeapNode*) realloc(pq->heapArray, pq->capacity * sizeof(HeapNode));
   }
+
+    HeapNode newNode = {data, p};
+    int i = pq->size;
+    pq->heapArray[i] = newNode;
+    pq->size++;
+
+    while (i > 0 && pq->heapArray[(i-1)/2].priority < p)
+    {
+      pq->heapArray[i] = pq->heapArray[(i-1)/2];
+      i = (i-1)/2;
+    }
+    pq->heapArray[i] = newNode;
 }
 
 void heap_pop(Heap* pq){

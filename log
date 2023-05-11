@@ -212,3 +212,35 @@ heap.c:35:32: error: subscripted value is neither array nor pointer nor vector
       |                                ^
 Compilation failed
 b3456e6
+Thu 11 May 2023 02:19:35 AM UTC: 
+ heap.c | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:32:23: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   32 |   if (pq->size >= pq->capacity)
+      |                       ^~~~~~~~
+      |                       capac
+heap.c:34:9: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   34 |     pq->capacity *= 2;
+      |         ^~~~~~~~
+      |         capac
+heap.c:35:22: error: ‘HeapNode’ undeclared (first use in this function)
+   35 |     pq->heapArray = (HeapNode*) realloc(pq->heapArray, pq->capacity * sizeof(HeapNode));
+      |                      ^~~~~~~~
+heap.c:35:22: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:35:31: error: expected expression before ‘)’ token
+   35 |     pq->heapArray = (HeapNode*) realloc(pq->heapArray, pq->capacity * sizeof(HeapNode));
+      |                               ^
+heap.c:38:13: error: expected ‘;’ before ‘newNode’
+   38 |     HeapNode newNode = {data, p};
+      |             ^~~~~~~~
+      |             ;
+heap.c:40:24: error: ‘newNode’ undeclared (first use in this function)
+   40 |     pq->heapArray[i] = newNode;
+      |                        ^~~~~~~
+heap.c:43:55: error: ‘p’ undeclared (first use in this function)
+   43 |     while (i > 0 && pq->heapArray[(i-1)/2].priority < p)
+      |                                                       ^
+Compilation failed
+e77171b
