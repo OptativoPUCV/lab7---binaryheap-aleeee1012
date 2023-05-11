@@ -817,3 +817,17 @@ Thu 11 May 2023 11:14:22 AM UTC:
  tests:  7|1
 total_score: 45/70
 0915acc
+Thu 11 May 2023 11:15:23 AM UTC: 
+ heap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:68:21: error: expected ‘;’ before ‘break’
+   68 |       printf("hola")
+      |                     ^
+      |                     ;
+   69 | 
+   70 |       break;
+      |       ~~~~~          
+Compilation failed
+d316f6d

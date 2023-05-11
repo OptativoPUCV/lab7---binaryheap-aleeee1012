@@ -61,11 +61,12 @@ void heap_pop(Heap* pq)
    int hijoD = (2 * k) + 2;
    int hijoI = (2 * k) + 2;
    int tmp = k;
-   printf("hola");
     
     if(hijoI < i && pq->heapArray[hijoI].priority > pq->heapArray[tmp].priority)
     {
       tmp = hijoI;
+      printf("hola")
+
       break;
     }
 
