@@ -462,3 +462,9 @@ heap.c:49:7: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘da
       |       ^~
 Compilation failed
 5dd6066
+Thu 11 May 2023 03:36:11 AM UTC: 
+ heap.c | 22 ++--------------------
+ 1 file changed, 2 insertions(+), 20 deletions(-)
+ tests:  2|2
+total_score: 20/70
+40f6ed2
