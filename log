@@ -244,3 +244,24 @@ heap.c:43:55: error: ‘p’ undeclared (first use in this function)
       |                                                       ^
 Compilation failed
 e77171b
+Thu 11 May 2023 02:20:57 AM UTC: 
+ heap.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:35:22: error: ‘HeapNode’ undeclared (first use in this function)
+   35 |     pq->heapArray = (HeapNode*) realloc(pq->heapArray, pq->capac * sizeof(HeapNode));
+      |                      ^~~~~~~~
+heap.c:35:22: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:35:31: error: expected expression before ‘)’ token
+   35 |     pq->heapArray = (HeapNode*) realloc(pq->heapArray, pq->capac * sizeof(HeapNode));
+      |                               ^
+heap.c:38:13: error: expected ‘;’ before ‘newNode’
+   38 |     HeapNode newNode = {data, priority};
+      |             ^~~~~~~~
+      |             ;
+heap.c:40:24: error: ‘newNode’ undeclared (first use in this function)
+   40 |     pq->heapArray[i] = newNode;
+      |                        ^~~~~~~
+Compilation failed
+820c1d9
