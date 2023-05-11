@@ -32,23 +32,44 @@ void heap_push(Heap* pq, void* data, int p)
   if(pq->size == pq->capac)
   {
     pq->capac = (pq->capac * 2) + 1;
-    pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(heapElem));
+    pq->heapArray = realloc(pq->heapArray, pq->capac);
   }
 
   pq->heapArray[pq->size].priority = p;
   pq->heapArray[pq->size].data = data;
   pq->size++;
 
-  while(pq->size > 0 && pq->heapArray[pq->size].priority > pq->heapArray[(pq->size-1)/2].priority)
+  while(pq->size > 0 && pq->heapArray[pq->size].priority > pq->heapArray[(pq->size - 1)/2].priority)
   {
     heapElem tmp = pq->heapArray[pq->size]; //Variable temporal, para guardar dato que se desea cambiar
-    pq->heapArray[pq->size] = pq->heapArray[(pq->size-1)/2];
-    pq->heapArray[(pq->size-1)/2] = tmp;
-    pq->size = (pq->size-1)/2;
+    pq->heapArray[pq->size] = pq->heapArray[(pq->size - 1)/2];
+    pq->heapArray[(pq->size - 1)/2] = tmp;
+    pq->size = (pq->size - 1)/2;
   }
 }
 
-//pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(heapElem));
+/*void heap_push(Heap* pq, void* data, int p)
+{
+  if(pq->size == pq->capac)
+  {
+    pq->capac = (pq->capac * 2) + 1;
+    pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(heapElem));
+  }
+
+  int i = pq->size;
+  pq->heapArray[i].priority = p;
+  pq->heapArray[i].data = data;
+  pq->size++;
+
+  while(i > 0 && pq->heapArray[i].priority > pq->heapArray[(i-1)/2].priority)
+  {
+    heapElem tmp = pq->heapArray[i];
+    pq->heapArray[i] = pq->heapArray[(i-1)/2];
+    pq->heapArray[(i-1)/2] = tmp;
+    i = (i-1)/2;
+  }
+}*/
+
 
 void heap_pop(Heap* pq){
 
