@@ -202,3 +202,13 @@ heap.c:35:24: error: expected identifier before ‘(’ token
       |                        ^
 Compilation failed
 c1f239b
+Thu 11 May 2023 12:03:52 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:35:32: error: subscripted value is neither array nor pointer nor vector
+   35 |   while(pq->heapArray->priority[pq->size-1] > priority)
+      |                                ^
+Compilation failed
+b3456e6

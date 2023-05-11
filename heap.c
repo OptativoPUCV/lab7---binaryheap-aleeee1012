@@ -32,7 +32,7 @@ void heap_push(Heap* pq, void* data, int priority)
   pq->heapArray->data = data;
   pq->size++;
 
-  while(pq->heapArray->(size-1)->priority > priority)
+  while(pq->heapArray->priority[pq->size-1] > priority)
   {
     printf("HOLA");
   }
