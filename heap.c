@@ -59,7 +59,7 @@ void heap_pop(Heap* pq)
   while(1)
   {
    int hijoD = (2 * k) + 2;
-   int hijoI = (2 * k) + 2;
+   int hijoI = (2 * k) + 1;
    int tmp = k;
     
     if(hijoI < i && pq->heapArray[hijoI].priority > pq->heapArray[tmp].priority)
@@ -77,7 +77,6 @@ void heap_pop(Heap* pq)
       heapElem tmp2 = pq->heapArray[k];
       pq->heapArray[k] = pq->heapArray[tmp];
       pq->heapArray[tmp] = tmp2;
-      i--;
     }
     break;
   }  
