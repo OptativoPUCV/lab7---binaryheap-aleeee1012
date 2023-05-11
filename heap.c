@@ -62,7 +62,7 @@ void heap_pop(Heap* pq)
    int hijoI = (2 * k) + 2;
    int tmp = k;
     
-    if(hijoI < i && pq->heapArray[izq].priority > pq->heapArray[mayor].priority)
+    if(hijoI < i && pq->heapArray[hijoI].priority > pq->heapArray[tmp].priority)
     {
       tmp = hijoI;
       break;

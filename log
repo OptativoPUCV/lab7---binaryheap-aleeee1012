@@ -782,3 +782,14 @@ heap.c:61:8: error: unused variable ‘hijoD’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 a0bf556
+Thu 11 May 2023 11:05:16 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:61:8: error: unused variable ‘hijoD’ [-Werror=unused-variable]
+   61 |    int hijoD = (2 * k) + 2;
+      |        ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0cf500f
