@@ -65,13 +65,11 @@ void heap_pop(Heap* pq)
     if(hijoI < i && pq->heapArray[hijoI].priority > pq->heapArray[tmp].priority)
     {
       tmp = hijoI;
-      break;
     }
 
     if(hijoD < i && pq->heapArray[hijoD].priority > pq->heapArray[tmp].priority)
     {
       tmp = hijoD;
-      break;
     }
 
     if(tmp != k)
@@ -80,7 +78,6 @@ void heap_pop(Heap* pq)
       pq->heapArray[k] = pq->heapArray[tmp];
 pq->heapArray[tmp] = tmp2;
      // k = tmp;
-      break;
     }
     break;
   }  
