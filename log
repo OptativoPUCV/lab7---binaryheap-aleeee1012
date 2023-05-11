@@ -179,3 +179,16 @@ Wed 10 May 2023 11:57:27 PM UTC:
  tests:  2|2
 total_score: 20/70
 96a9fa4
+Thu 11 May 2023 12:02:31 AM UTC: 
+ heap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:35:22: error: ‘heapElem’ {aka ‘struct nodo’} has no member named ‘size’
+   35 |   while(pq->heapArray->size-1->priority > priority)
+      |                      ^~
+heap.c:35:30: error: invalid type argument of ‘->’ (have ‘int’)
+   35 |   while(pq->heapArray->size-1->priority > priority)
+      |                              ^~
+Compilation failed
+bb0f563
