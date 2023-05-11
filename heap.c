@@ -53,6 +53,11 @@ void heap_push(Heap* pq, void* data, int p)
 {
 
 }*/
+void swap(HeapNode* a, HeapNode* b) {
+  HeapNode temp = *a;
+  *a = *b;
+  *b = temp;
+}
 
 void heap_pop(Heap* pq) {
   if (pq->size == 0) {

@@ -632,3 +632,20 @@ heap.c:79:7: error: implicit declaration of function ‘swap’ [-Werror=implici
 cc1: all warnings being treated as errors
 Compilation failed
 17ef4f9
+Thu 11 May 2023 04:52:01 AM UTC: 
+ heap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:4:
+heap.c:56:11: error: unknown type name ‘HeapNode’
+   56 | void swap(HeapNode* a, HeapNode* b) {
+      |           ^~~~~~~~
+heap.c:56:24: error: unknown type name ‘HeapNode’
+   56 | void swap(HeapNode* a, HeapNode* b) {
+      |                        ^~~~~~~~
+heap.c: In function ‘heap_pop’:
+heap.c:84:7: error: implicit declaration of function ‘swap’ [-Werror=implicit-function-declaration]
+   84 |       swap(&pq->heapArray[child], &pq->heapArray[parent]); // intercambiar el padre con el hijo de mayor prioridad
+      |       ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+dfd95d8
