@@ -65,7 +65,7 @@ void heap_pop(Heap* pq)
     if(hijoI < i && pq->heapArray[hijoI].priority > pq->heapArray[tmp].priority)
     {
       tmp = hijoI;
-      printf("hola")
+      printf("hola");
 
       break;
     }
