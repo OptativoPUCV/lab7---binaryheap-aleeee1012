@@ -44,7 +44,7 @@ void heap_push(Heap* pq, void* data, int p)
     heapElem tmp = pq->heapArray[pq->size]; //Variable temporal, para guardar dato que se desea cambiar
     pq->heapArray[pq->size] = pq->heapArray[(pq->size-1)/2];
     pq->heapArray[(pq->size-1)/2] = tmp;
-    pq->size = (pq->size-1/2);
+    pq->size = (pq->size-1)/2;
   }
 }
 
