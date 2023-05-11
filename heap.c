@@ -52,10 +52,16 @@ void heap_push(Heap* pq, void* data, int p)
 void heap_pop(Heap* pq)
 {
   int i = pq->size;
-  heapElem tmp = pq->heapArray[0];
-  
   pq->heapArray[0] = pq->heapArray[i];
-  pq->heapArray[i] = tmp;
+  i--;
+
+  while(i > 0 && pq->heapArray[0].priority > pq->heapArray[i].priority)
+  {
+    heapElem tmp = pq->heapArray[0]; //Variable temporal, para guardar dato que se desea cambiar
+    pq->heapArray[0] = pq->heapArray[i];
+    pq->heapArray[i] = tmp;
+    i = (i - 1)/2;
+  }
 }
 
 Heap* createHeap()
