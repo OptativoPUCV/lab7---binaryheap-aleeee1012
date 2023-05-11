@@ -73,28 +73,20 @@ void heap_pop(Heap* pq)
       tmp = hijoD;
       break;
     }
+
+    if(tmp != k)
+    {
+      heapElem tmp2 = pq->heapArray[k];
+      pq->heapArray[k] = pq->heapArray[tmp];
+pq->heapArray[tmp] = tmp2;
+      break;
+    }
     break;
   }  
 }
 
 
-/*if(izq < pq->size && pq->heapArray[izq].priority > pq->heapArray[mayor].priority)
-
-{
-
-mayor = izq;
-
-}
-
-if(der < pq->size && pq->heapArray[der].priority >
-
-pq->heapArray[mayor].priority)
-
-{
-
-mayor = der;
-
-}
+/*
 
 if(mayor != aux)
 
