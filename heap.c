@@ -39,7 +39,7 @@ void heap_push(Heap* pq, void* data, int p)
   pq->heapArray[pq->size].data = data;
   pq->size++;
 
-  while(pq->size > 0 && pq->heapArray[pq->size].priority < pq->heapArray[(pq->size-1)/2].priority)
+  while(pq->size > 0 && pq->heapArray[pq->size].priority > pq->heapArray[(pq->size-1)/2].priority)
   {
     heapElem tmp = pq->heapArray[pq->size]; //Variable temporal, para guardar dato que se desea cambiar
     pq->heapArray[pq->size] = pq->heapArray[(pq->size-1)/2];
