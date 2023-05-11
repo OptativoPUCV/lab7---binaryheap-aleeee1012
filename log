@@ -334,3 +334,33 @@ heap.c:43:22: error: incompatible types when assigning to type ‘heapElem’ {a
 cc1: all warnings being treated as errors
 Compilation failed
 b0b7b48
+Thu 11 May 2023 02:24:57 AM UTC: 
+ heap.c | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:33:22: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘int’
+   33 |   pq->heapArray[i] = priority;
+      |                      ^~~~~~~~
+heap.c:34:5: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   34 |   pq->data[i] = data;
+      |     ^~
+heap.c:37:46: error: invalid operands to binary < (have ‘heapElem’ {aka ‘struct nodo’} and ‘int’)
+   37 |   while (i > 0 && pq->heapArray[(i - 1) / 2] < priority)
+      |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+      |                                |
+      |                                heapElem {aka struct nodo}
+heap.c:40:7: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   40 |     pq->data[i] = pq->data[(i - 1) / 2];
+      |       ^~
+heap.c:40:21: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   40 |     pq->data[i] = pq->data[(i - 1) / 2];
+      |                     ^~
+heap.c:44:22: error: incompatible types when assigning to type ‘heapElem’ {aka ‘struct nodo’} from type ‘int’
+   44 |   pq->heapArray[i] = priority;
+      |                      ^~~~~~~~
+heap.c:45:5: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘data’
+   45 |   pq->data[i] = data;
+      |     ^~
+Compilation failed
+57fd905
