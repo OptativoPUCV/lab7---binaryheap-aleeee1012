@@ -77,6 +77,7 @@ void heap_pop(Heap* pq)
       heapElem tmp2 = pq->heapArray[k];
       pq->heapArray[k] = pq->heapArray[tmp];
       pq->heapArray[tmp] = tmp2;
+      k = tmp;
     }
     break;
   }  
