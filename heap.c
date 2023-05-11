@@ -34,6 +34,8 @@ void heap_push(Heap* pq, void* data, int p)
     pq->capac = (pq->capac * 2) + 1;
     pq->heapArray = realloc(pq, pq->capac);
   }
+
+  pq->heapArray->priority = p;
 }
 
 void heap_pop(Heap* pq){
