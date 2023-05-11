@@ -80,7 +80,8 @@ void heap_pop(Heap* pq)
       k = tmp;
     }
     break;
-  }  
+  }
+  pq->size = i;
 }
 
 Heap* createHeap()
