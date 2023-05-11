@@ -39,10 +39,11 @@ void heap_push(Heap* pq, void* data, int p)
   pq->heapArray->data = data;
   pq->size++;
 
-  /*while(pq->size != 0)
+  while(pq->size > 0)
   {
-    
-  }*/
+    pq->heapArray = pq->heapArray - 1;
+    break;
+  }
 }
 
 void heap_pop(Heap* pq){
