@@ -542,3 +542,22 @@ heap.c:69:30: error: ‘tmp’ undeclared (first use in this function)
       |                              ^~~
 Compilation failed
 256e6a1
+Thu 11 May 2023 04:25:30 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:57:63: error: ‘HeapElem’ undeclared (first use in this function); did you mean ‘heapElem’?
+   57 |     pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(HeapElem));
+      |                                                               ^~~~~~~~
+      |                                                               heapElem
+heap.c:57:63: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:67:13: error: expected ‘;’ before ‘tmp’
+   67 |     HeapElem tmp = pq->heapArray[i];
+      |             ^~~~
+      |             ;
+heap.c:69:30: error: ‘tmp’ undeclared (first use in this function)
+   69 |     pq->heapArray[(i-1)/2] = tmp;
+      |                              ^~~
+Compilation failed
+03c8feb
