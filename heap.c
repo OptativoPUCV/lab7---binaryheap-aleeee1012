@@ -55,13 +55,53 @@ void heap_pop(Heap* pq)
   pq->heapArray[0] = pq->heapArray[i-1];
   i--;
 
-  while(i > 0 && pq->heapArray[0].priority > pq->heapArray[i-1].priority)
+  int k = 0;
+  while(1)
   {
-    heapElem tmp = pq->heapArray[0];
-    pq->heapArray[0] = pq->heapArray[i-1];
-    pq->heapArray[i] = tmp;
-  }
+   int hijoD = (2 * k) + 2;
+   int hijoI = (2 * k) + 2;
+   int tmp = k;
+    
+    if(hijoI < i && pq->heapArray[izq].priority > pq->heapArray[mayor].priority)
+    {
+      tmp = hijoI;
+      break;
+    }
+    break;
+  }  
 }
+
+
+/*if(izq < pq->size && pq->heapArray[izq].priority > pq->heapArray[mayor].priority)
+
+{
+
+mayor = izq;
+
+}
+
+if(der < pq->size && pq->heapArray[der].priority >
+
+pq->heapArray[mayor].priority)
+
+{
+
+mayor = der;
+
+}
+
+if(mayor != aux)
+
+{
+
+heapElem temporal = pq->heapArray[aux];
+
+pq->heapArray[aux] = pq->heapArray[mayor];
+
+pq->heapArray[mayor] = temporal;
+
+heapifyDown(pq, mayor); //llamada recursiva a la misma función para
+s}*/
 
 /*void heap_pop(Heap* pq) {
   if (pq->size == 0) {
@@ -92,7 +132,6 @@ void heap_pop(Heap* pq)
     }
   }
 }*/
-
 
 Heap* createHeap()
 {
