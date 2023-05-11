@@ -88,6 +88,9 @@ pq->heapArray[tmp] = tmp2;
 void heap_pop(Heap* pq)
 {
   int i = pq->size;
+  if (i <= 0) {
+    return;
+  }
   pq->heapArray[0] = pq->heapArray[i-1];
   i--;
 
